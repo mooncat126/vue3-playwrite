@@ -6,13 +6,18 @@ test.describe('UserProfile Component', () => {
     await page.route('/api/user', route => route.fulfill({
       status: 200,
       contentType: 'application/json',
-      body: JSON.stringify({ name: 'John Doe', email: 'john@example.com' })
+      body: JSON.stringify({ name: 'Xiang', email: 'Xiang@example.com' })
     }));
+
+    // 访问 UserProfile 页面
+    await page.goto('http://localhost:8080/user-profile'); 
   });
 
-  test('should display user information', async ({ page }) => {
-    await page.goto('http://localhost:8080');
-    await expect(page.locator('h1')).toContainText('John Doe');
-    await expect(page.locator('p')).toContainText('Email: john@example.com');
+  test('should display user name and email', async ({ page }) => {
+    // 断言用户名是否正确
+    await expect(page.locator('h1')).toHaveText('Xiang');
+
+    // 断言邮箱是否正确
+    await expect(page.locator('p')).toContainText('Email: Xiang@example.com');
   });
 });
