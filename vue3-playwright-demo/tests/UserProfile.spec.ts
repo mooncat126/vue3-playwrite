@@ -18,6 +18,6 @@ test.describe('UserProfile Component', () => {
     await expect(page.locator('h1')).toHaveText('Xiang');
 
     // 断言邮箱是否正确
-    await expect(page.locator('p')).toContainText('Email: Xiang@example.com');
+    await expect(page.locator('p')).toContainText('Email: xiang@example.com');
   });
 });
