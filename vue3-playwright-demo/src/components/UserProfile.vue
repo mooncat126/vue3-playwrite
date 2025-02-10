@@ -19,8 +19,7 @@
     },
     async mounted() {
       try {
-        const response = await axios.get('/api/user');
-        this.user = response.data;
+        const response = await axios.get('/api/user');        this.user = response.data;
       } catch (error) {
         console.error('Failed to load user:', error);
         this.user = { name: 'Error', email: 'N/A' };
