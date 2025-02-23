@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import UserProfile from '@/components/UserProfile.vue';
-import HelloWorld from '@/components/HelloWorld.vue';
+import UserNameInput from '@/components/UserNameInput.vue';
 
 
 const routes = [
   {
     path: '/',
-    name: 'HelloWorld',
-    component: HelloWorld
+    name: 'UserNameInput',
+    component: UserNameInput
   },
   {
     path: '/user-profile',
