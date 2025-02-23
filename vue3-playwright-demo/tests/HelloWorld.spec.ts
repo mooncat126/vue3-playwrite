@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 
+test.describe('HelloWorld Component', () => {
+
 test('测试 Vuetify 组件的输入和按钮交互', async ({ page }) => {
+  await new Promise(resolve => setTimeout(resolve, 3000));
+
   // 访问页面
   await page.goto('http://localhost:8080');
 
@@ -19,3 +23,4 @@ test('测试 Vuetify 组件的输入和按钮交互', async ({ page }) => {
   // 检查 v-alert 是否包含正确的文本
   await expect(page.locator('.v-alert')).toContainText('消息：Playwright 和 Vue 3');
 });
+})
